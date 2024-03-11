@@ -1,0 +1,24 @@
+.btn{
+    border-radius: 5px;
+    border: 1.5px solid;
+    padding: 8px;
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    width: 15%;
+    margin-bottom: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn:hover{
+    color: white;
+    background-color:var(--primary-color);
+    transition: all 0.25s ease;
+}
+
+
+@media only screen and (max-width: 650px) {
+    .btn{
+        width: 25%;
+    }
+}

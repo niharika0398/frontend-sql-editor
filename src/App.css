@@ -16,7 +16,7 @@ html {
 
 header {
   background-color: var(--secondary-color);
-  box-shadow: inset 0 -2px #efedec, 0 0 30px 2px #2421201a;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1);
   padding: 16px;
 }
 
@@ -45,4 +45,56 @@ header {
 
 .fileName.active {
   color: var(--primary-color);
+}
+
+.new-query-btn{
+  display: none;
+}
+
+
+.navbar-menu-icon {
+  cursor: pointer;
+  display: none;
+}
+
+/* Media Query for Mobile Devices */
+@media only screen and (max-width: 650px) {
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    padding: 0 16px; 
+  }
+
+  .navbar-menu-icon {
+    display: block; 
+  }
+
+  .new-query-btn {
+    display: contents;
+  }
+
+  .sidebar {
+    transform: translateX(0);
+    height: 100%;
+  }
+  .sidebar.open {
+    transform: translateX(0);
+    z-index: 100;
+    width: 50%;
+    position: absolute;
+    height: 100%;
+    box-shadow: 0px 10px 10px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .sidebar {
+    transform: translateX(-100%);
+    position: absolute;
+    transition: transform 0.3s ease;
+    z-index: 1;
+  }
+
+  .queryContent {
+    width: 100%;
+  }
 }

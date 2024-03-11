@@ -10,6 +10,7 @@ import Pagination from "../Pagination";
 import Tabs from "../Tabs";
 import ColumnTable from "./ColumnTable";
 import { lazy } from 'react';
+import Button from "../Button";
 
 const ResultTableCompoent = lazy(() => import('./ResultTable'));
 
@@ -30,7 +31,7 @@ const myTheme = createTheme({
 });
 const extensions = [javascript({ jsx: true })];
 
-export default function UserInputQuery({ selectedTable }) {
+export default function UserInputQuery({ selectedTable ,isFocus }) {
   const [query, setQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [perPage, setPerPage] = useState(5);
@@ -38,8 +39,13 @@ export default function UserInputQuery({ selectedTable }) {
   const { data, isLoading, error, refetch } = useSQLQueryData(selectedTable);
 
   useEffect(() => {
-    setQuery(`select * from ${selectedTable}`);
-  }, [selectedTable]);
+    if(isFocus){
+      setQuery('');
+    }else{
+      setQuery(`select * from ${selectedTable}`);
+    }
+    
+  }, [selectedTable,isFocus]);
 
   const onChange = (value) => {
     setQuery(value);
@@ -60,9 +66,7 @@ export default function UserInputQuery({ selectedTable }) {
 
   return (
     <>
-      <div onClick={handleRunQuery} className="runQueryBtn" role="button">
-        Run Query
-      </div>
+      <Button title="Run Query" handleClick={handleRunQuery}/>
       <CodeMirror
         className="codeMirrorSty"
         height="200px"
