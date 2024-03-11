@@ -1,0 +1,38 @@
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  border: 1px solid #dddddd;
+  padding: 8px;
+  text-align: left;
+  background-color: var(--secondary-color);
+  width: 20%;
+}
+
+td {
+  border: 1px solid #dddddd;
+  padding: 8px;
+  text-align: left;
+}
+
+thead {
+  position: sticky;
+  top: 0;
+  background-color: var(--secondary-color);
+  z-index: 1;
+}
+
+.tableWrappper {
+  margin: 16px 16px 24px;
+  border: 1px solid;
+}
+
+
+
+.tableData {
+  overflow: auto;
+  padding-bottom: 16px;
+  max-height: 200px;
+}

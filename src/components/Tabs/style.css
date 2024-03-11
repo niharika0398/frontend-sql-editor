@@ -1,0 +1,20 @@
+.tabs{
+    display: flex;
+    margin-top: 6px;
+}
+
+.tab{
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    padding: 8px;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+
+.tab.active {
+  background-color: var(--secondary-color);
+  text-decoration: underline;
+}
+

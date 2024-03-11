@@ -1,0 +1,48 @@
+:root {
+  --primary-color: #2026d2;
+  --secondary-color: #f2f2f2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: var(--secondary-color);
+  box-shadow: inset 0 -2px #efedec, 0 0 30px 2px #2421201a;
+  padding: 16px;
+}
+
+.mainContainer {
+  display: flex;
+  height: 100%;
+}
+
+.sidebar {
+  flex: 0 0 20%;
+  background-color: #f0f0f0;
+  padding: 16px;
+}
+
+.queryContent {
+  flex: 1;
+  padding: 20px;
+  width: 50%;
+}
+
+.fileName {
+  padding: 4px;
+  margin-bottom: 6px;
+  cursor: pointer;
+}
+
+.fileName.active {
+  color: var(--primary-color);
+}
