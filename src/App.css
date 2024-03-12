@@ -9,7 +9,6 @@
 
 body,
 html {
-  height: 100%;
   margin: 0;
   padding: 0;
 }
@@ -18,6 +17,9 @@ header {
   background-color: var(--secondary-color);
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1);
   padding: 16px;
+  position: sticky;
+  top: 0;
+  height: 10vh;
 }
 
 .mainContainer {
@@ -98,3 +100,5 @@ header {
     width: 100%;
   }
 }
+
+

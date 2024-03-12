@@ -76,6 +76,7 @@ const App = () => {
         </div>
 
         <div className="queryContent">
+        {/* <textarea maxLength={50} className="textArea"/> */}
           <UserInputQuery selectedTable={selectedTable.file} isFocus={isUserFocus}/>
         </div>
       </div>

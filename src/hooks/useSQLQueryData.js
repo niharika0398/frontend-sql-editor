@@ -46,7 +46,7 @@ const useSQLQueryData = (fileName) => {
     fetchDataIfNeeded();
   }, [fileName]);
 
-  const handleRefresh = useCallback(async (query = "") => {
+  const handleRefetch = useCallback(async (query = "") => {
     setIsLoading(true);
     setError("");
     try {
@@ -83,7 +83,7 @@ const useSQLQueryData = (fileName) => {
     }
   }, [apiUrl]);
 
-  return { error, isLoading, data, timeOfRequest, refetch: handleRefresh };
+  return { error, isLoading, data, timeOfRequest, refetch: handleRefetch };
 };
 
 export default useSQLQueryData;

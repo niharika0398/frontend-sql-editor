@@ -1,37 +1,16 @@
 import React, { useState, useEffect, useMemo } from "react";
-import CodeMirror from "@uiw/react-codemirror";
-import { createTheme } from "@uiw/codemirror-themes";
-import { javascript } from "@codemirror/lang-javascript";
-import { tags as t } from "@lezer/highlight";
+import { lazy } from "react";
 import useSQLQueryData from "../../hooks/useSQLQueryData";
-import "./style.css";
 import Spinner from "../Loader";
 import Pagination from "../Pagination";
 import Tabs from "../Tabs";
 import ColumnTable from "./ColumnTable";
-import { lazy } from 'react';
 import Button from "../Button";
+import "./style.css";
 
-const ResultTableCompoent = lazy(() => import('./ResultTable'));
+const ResultTableCompoent = lazy(() => import("./ResultTable"));
 
-
-const myTheme = createTheme({
-  theme: "light",
-  settings: {
-    background: "#ffffff",
-    foreground: "#000",
-    caret: "red",
-    selection: "#8a91991a",
-    selectionMatch: "red",
-    lineHighlight: "#8a91991a",
-    gutterBackground: "#fff",
-    gutterForeground: "#D9DEEB",
-  },
-  styles: [{ tag: t.comment, color: "#919EAD" }],
-});
-const extensions = [javascript({ jsx: true })];
-
-export default function UserInputQuery({ selectedTable ,isFocus }) {
+export default function UserInputQuery({ selectedTable, isFocus }) {
   const [query, setQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [perPage, setPerPage] = useState(5);
@@ -39,16 +18,15 @@ export default function UserInputQuery({ selectedTable ,isFocus }) {
   const { data, isLoading, error, refetch } = useSQLQueryData(selectedTable);
 
   useEffect(() => {
-    if(isFocus){
-      setQuery('');
-    }else{
+    if (isFocus) {
+      setQuery("");
+    } else {
       setQuery(`select * from ${selectedTable}`);
     }
-    
-  }, [selectedTable,isFocus]);
+  }, [selectedTable, isFocus]);
 
-  const onChange = (value) => {
-    setQuery(value);
+  const onChange = (e) => {
+    setQuery(e.target.value);
   };
 
   const handleRunQuery = () => {
@@ -66,13 +44,10 @@ export default function UserInputQuery({ selectedTable ,isFocus }) {
 
   return (
     <>
-      <Button title="Run Query" handleClick={handleRunQuery}/>
-      <CodeMirror
-        className="codeMirrorSty"
-        height="200px"
-        width="100%"
-        theme={myTheme}
-        extensions={extensions}
+      <Button title="Run Query" handleClick={handleRunQuery} />
+      <textarea
+        maxLength={50}
+        className="textArea"
         onChange={onChange}
         value={query}
       />
