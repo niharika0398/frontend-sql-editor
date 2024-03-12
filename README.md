@@ -17,7 +17,7 @@ This is an online SQL editor developed by using React + Vite. It contains a data
 
 - **Pagination Method**: To enhance readability, we provide a pagination method allowing users to navigate through data based on their preferences.
 
-- **Minimal plugins**: Our approach involves minimal plugin usage. We utilize only one plugin as part of CodeMirror, while the rest of the components including Tabs, Pagination, and Loader are custom-built. Additionally, we refrain from using any plugins for styling purposes.
+- **Minimal plugins**: Our approach involves minimal plugin usage. We utilize only one plugin as part of icon, while the rest of the components including Tabs, Pagination, and Loader are custom-built. Additionally, we refrain from using any plugins for styling purposes.
 
 - **Create hooks/helper function to optimize code**: To optimize code performance, we leverage hooks and helper functions. For instance, we utilize the useQueryData hook, which is solely responsible for fetching data from the API. This ensures a streamlined and efficient data retrieval process.
 

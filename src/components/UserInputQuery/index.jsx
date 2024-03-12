@@ -50,6 +50,7 @@ export default function UserInputQuery({ selectedTable, isFocus }) {
         className="textArea"
         onChange={onChange}
         value={query}
+        type="text"
       />
 
       <Tabs

@@ -10,10 +10,9 @@ const Tabs = ({ tabs }) => {
 
   return (
     <div>
-      <div className='tabs'>
+      <div className='tabs' role="tablist">
         {tabs.map((tab, index) => (
           <div role="tab"
-            
             key={index}
             className={`tab ${index === activeTab ? 'active' : ''}`}
             onClick={() => handleTabClick(index)}
@@ -26,6 +25,8 @@ const Tabs = ({ tabs }) => {
         {tabs.map((tab, index) => (
           <div
             key={index}
+            role="tabpanel"
+            aria-labelledby={`tab-${index + 1}`}
           >
             {index === activeTab && tab.content}
           </div>
