@@ -1,6 +1,7 @@
 # Overview
 
-This is an online SQL editor developed by using React + Vite. It contains a data dump which is used from this repository. The sections below detail the salient features of this project.
+This is an online SQL editor developed using React and Vite. It contains a data dump sourced from [this](https://github.com/graphql-compose/graphql-compose-examples/tree/master/examples/northwind/data/csv) repository. Below are the salient features of this project.
+
 ## Features
 
 - **RUN SQL Query based on columns**: Users can execute queries based on table columns to filter data effectively.
@@ -20,6 +21,22 @@ This is an online SQL editor developed by using React + Vite. It contains a data
 - **Minimal plugins**: Our approach involves minimal plugin usage. We utilize only one plugin as part of icon, while the rest of the components including Tabs, Pagination, and Loader are custom-built. Additionally, we refrain from using any plugins for styling purposes.
 
 - **Create hooks/helper function to optimize code**: To optimize code performance, we leverage hooks and helper functions. For instance, we utilize the useQueryData hook, which is solely responsible for fetching data from the API. This ensures a streamlined and efficient data retrieval process.
+
+
+## Performance 
+
+- **Page Speed Insights**: The load time according to Page Speed Insights is 1.5 seconds. The metrics are:
+First Contentful Paint: 1.4s
+Largest Contentful Paint: 2.3s
+Total Blocking Time: 0ms
+Cumulative Layout Shift: 0,
+for more info check [this](https://pagespeed.web.dev/analysis/https-frontend-sql-editor-vercel-app/5j7u44d1b5?form_factor=mobile) link.
+
+- **Chrome Lighthouse**: The chrome load time is 1.10 seconds and the DOMContentLoaded event fires after 1.10 seconds and Lighthouse score is:
+Perfomance: 99, 
+Accessibilty: 96,
+Best practices: 95
+
 
 ## Installation and Usage
 
